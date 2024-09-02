@@ -41,18 +41,16 @@ export const SubmitButton = () => {
 
 	}
 
-    return (
+	return (
 		<>
-        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <button type="submit" onClick={handleSubmitClick}>Submit</button>
-        </div>
-		<BoardInfoPopUp 
+			<button type="submit" className="w-full bg-[#0047AB] text-white rounded-[6px] font-[600] flex items-center justify-center px-[10px] py-[6px] hover:bg-[#0047AB]/80" onClick={handleSubmitClick}>Submit</button>
+			<BoardInfoPopUp 
 				trigger={boardInfoProps.trigger} 
 				setTrigger={setBoardInforPopupTrigger}
 				numNodes={boardInfoProps.numNodes}
 				numEdges={boardInfoProps.numEdges}
 				isDAG={boardInfoProps.isDAG}
-		/>
+			/>
 		</>
-    );
+	);
 }

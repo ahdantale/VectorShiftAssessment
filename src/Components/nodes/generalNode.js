@@ -1,4 +1,4 @@
-import Node from "../Components/Node/Node"
+import Node from "../Node/Node"
 
 function GeneralNode({id, data}) {
 	
@@ -15,7 +15,7 @@ function GeneralNode({id, data}) {
 	return (
 		<Node  handlesConfig={handlesConfig}>
 			<div className="w-full h-full flex flex-col items-start justify-start gap-[6px]">
-				<span>General Node</span>
+				<span className="pb-[4px] font-[600] w-full border-b-[1px] border-b-[solid] border-b-[#0818A8]">General Node</span>
 				<span>This is a general node.</span>
 			</div>
 		</Node>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Handle, Position } from 'reactflow';
-import Node from '../Components/Node/Node';
+import Node from '../Node/Node';
 
 export const OutputNode = ({ id, data }) => {
   const [currName, setCurrName] = useState(data?.outputName || id.replace('customOutput-', 'output_'));
@@ -25,7 +25,7 @@ export const OutputNode = ({ id, data }) => {
   return (
 		<Node className="!h-fit !w-fit" handlesConfig={handlesConfig}>
 			<div className='flex flex-col gap-[6px]'>
-				<span>Output</span>
+				<span className="pb-[4px] font-[600] w-full border-b-[1px] border-b-[solid] border-b-[#0818A8]">Output</span>
 				<div className='flex flex-row items-center justify-start gap-[6px]'>
 					<label htmlFor='text-op'>
 						Name:

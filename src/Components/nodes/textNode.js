@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Handle, Position } from 'reactflow';
-import Node from '../Components/Node/Node';
+import Node from '../Node/Node';
 
 export const TextNode = ({ id, data }) => {
 
@@ -48,7 +48,7 @@ export const TextNode = ({ id, data }) => {
   return (
     <Node handlesConfig={handlesConfig} className="!h-fit !w-fit">
 			<div className='flex flex-col gap-[6px]'>
-				<span>Text</span>
+				<span className='pb-[4px] font-[600] w-full border-b-[1px] border-b-[solid] border-b-[#0818A8]'>Text</span>
 				<div className='flex flex-row items-start justify-start gap-[6px]'>
 					<label htmlFor='text-ip-1'>
 						Text:
@@ -58,7 +58,7 @@ export const TextNode = ({ id, data }) => {
 						value={currText}
 						onChange={handleTextChange}
 						ref={textAreaRef}
-						className="max-w-[250px] w-[250px]"
+						className="max-w-[250px] w-[250px] rounded-[6px]"
 					/>
 				</div>
 			</div>

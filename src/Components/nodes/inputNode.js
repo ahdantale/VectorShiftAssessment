@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Handle, Position } from 'reactflow';
-import Node from '../Components/Node/Node';
+import Node from '../Node/Node';
 
 export const InputNode = ({ id, data }) => {
   const [currName, setCurrName] = useState(data?.inputName || id.replace('customInput-', 'input_'));
@@ -18,14 +18,16 @@ export const InputNode = ({ id, data }) => {
 
 	const handlesConfig = {
 		source : [
-			{id:`${id}-value`}
+			{
+				id:`${id}-value`,
+			}
 		]
 	}
 
   return (
 		<Node handlesConfig={handlesConfig} className="!h-fit !w-fit">
 			<div className='flex flex-col gap-[6px]'>
-				<span>Input</span>
+				<span className="pb-[4px] font-[600] w-full border-b-[1px] border-b-[solid] border-b-[#0818A8]">Input</span>
 				<div className='flex flex-row items-center justify-start gap-[6px]'>
 					<label htmlFor='text-ip'>
 						Name:
@@ -35,6 +37,7 @@ export const InputNode = ({ id, data }) => {
 						value={currName} 
 						onChange={handleNameChange} 
 						id="text-ip"
+						className='rounded-[6px]'
 					/>
 				</div>
 				<div className='flex flex-row items-center justify-start gap-[6px]'>

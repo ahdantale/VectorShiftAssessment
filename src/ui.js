@@ -6,17 +6,17 @@ import { useState, useRef, useCallback } from 'react';
 import ReactFlow, { Controls, Background, MiniMap } from 'reactflow';
 import { useStore } from './store';
 import { shallow } from 'zustand/shallow';
-import { InputNode } from './nodes/inputNode';
-import { LLMNode } from './nodes/llmNode';
-import { OutputNode } from './nodes/outputNode';
-import { TextNode } from './nodes/textNode';
-import GeneralNode from './nodes/generalNode';
-import ImageOutputNode from './nodes/imageOutputNode';
+import { InputNode } from './Components/nodes/inputNode';
+import { LLMNode } from './Components/nodes/llmNode';
+import { OutputNode } from './Components/nodes/outputNode';
+import { TextNode } from './Components/nodes/textNode';
+import GeneralNode from './Components/nodes/generalNode';
+import ImageOutputNode from './Components/nodes/imageOutputNode';
+import CodeOutputNode from './Components/nodes/codeOutputNode';
+import UrlInputNode from './Components/nodes/urlInputNode';
+import MultiInputLlmNode from './Components/nodes/multiInputLlmNode';
 
 import 'reactflow/dist/style.css';
-import CodeOutputNode from './nodes/codeOutputNode';
-import UrlInputNode from './nodes/urlInputNode';
-import MultiInputLlmNode from './nodes/multiInputLlmNode';
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -100,7 +100,7 @@ export const PipelineUI = () => {
 
     return (
         <>
-        <div ref={reactFlowWrapper} style={{width: '100wv', height: '70vh'}}>
+        <div  className='w-full h-[100vh]' ref={reactFlowWrapper}>
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
@@ -114,8 +114,9 @@ export const PipelineUI = () => {
                 proOptions={proOptions}
                 snapGrid={[gridSize, gridSize]}
                 connectionLineType='smoothstep'
+				defaultMarkerColor='#00308F'
             >
-                <Background color="#aaa" gap={gridSize} />
+                <Background color="#000" gap={gridSize} style={{backgroundColor : "#FAFBFB"}}/>
                 <Controls />
                 <MiniMap />
             </ReactFlow>
