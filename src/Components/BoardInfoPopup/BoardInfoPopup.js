@@ -9,8 +9,9 @@ function BoardInfoPopUp({numNodes, numEdges, isDAG, trigger, setTrigger}) {
 	
 	return (
 		<Popup {...{trigger, setTrigger}}>
-			<div className="flex flex-col bg-white px-[12px] py-[6px] rounded-[6px]">
-				<div className="w-full flex items-center justify-end">
+			<div className="flex flex-col bg-white px-[12px] py-[6px] rounded-[6px] gap-[8px]">
+				<div className="w-full flex items-center justify-between pb-[6px] border-b-[1px] border-b-[solid] border-b-[#C0C0C0]">
+					<h2 className={"text-[20px] text-[#002D62] font-[700]"}>Nodeboard Info</h2>
 					<button onClick={handleCloseClick}><CloseIcon /></button>
 				</div>
 				<div className="w-full flex flex-col items-start justify-start gap-[8px]">

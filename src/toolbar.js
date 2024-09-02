@@ -12,11 +12,14 @@ import CodeIcon from '@mui/icons-material/Code';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import LinkIcon from '@mui/icons-material/Link';
 
+
+
 export const PipelineToolbar = () => {
 
     return (
         <div className='px-[16px] py-[18px] w-full h-full bg-white border-r-[1px] border-r-[solid] border-r-[#EFEFF0] flex flex-col items-center justify-between' >
             <div className='flex flex-col items-center justify-start gap-[12px] w-full' >
+				<img src="/cm_logo.png" alt="codemapper logo" className="max-w-[190px] rounded-[12px]"/>
                 <DraggableNode type='customInput' label='Input' Icon={InputIcon} />
                 <DraggableNode type='llm' label='LLM' Icon={SmartButtonIcon}/>
                 <DraggableNode type='customOutput' label='Output' Icon={OutputIcon} />
