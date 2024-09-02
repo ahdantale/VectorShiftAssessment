@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import styles from "./Popup.module.css"
 
-function Popup({trigger, setTrigger, children}) {
+function Popup({trigger, setTrigger, children, outerContainerClassName}) {
 
 	const innerContainerRef = useRef(null)
 	
@@ -20,7 +20,7 @@ function Popup({trigger, setTrigger, children}) {
 	
 	if(trigger) {
 		return (
-			<div  className={styles.outerContainer}>
+			<div  className={`${styles.outerContainer} ${outerContainerClassName}`}>
 				<div ref={innerContainerRef}>
 					{children}	
 				</div>

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Handle, Position } from 'reactflow';
+import RESERVED_JS_WORDS from '../../DefaultData/reservedWords';
 import Node from '../Node/Node';
 
 export const TextNode = ({ id, data }) => {
@@ -17,9 +18,11 @@ export const TextNode = ({ id, data }) => {
 		const targetHandleConfig = []
 		
 		braceGroups?.map(val=>val.match(textMatchRegex)[0]).forEach((val,idx) => {
-			targetHandleConfig.push({
-				id : `${id}-text-input-${idx}`
-			})	
+			if(!RESERVED_JS_WORDS.includes(val)){
+				targetHandleConfig.push({
+					id : `${id}-text-input-${idx}`
+				})	
+			}
 		});
 		return targetHandleConfig
 	},[currText])
