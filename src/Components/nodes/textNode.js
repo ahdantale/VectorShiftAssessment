@@ -11,7 +11,7 @@ export const TextNode = ({ id, data }) => {
 	const [currText, setCurrText] = useState(data?.text || '{{input}}');
   
 	const targetHandleConfig = useMemo(()=>{
-		const braceMatchRegex = /({{[a-zA-Z_$][0-9a-zA-Z_$]*}})/g
+		const braceMatchRegex = /[^{{}}]+(?=})/g
 		const braceGroups = currText.match(braceMatchRegex)
 		const textMatchRegex = /([a-zA-Z_$][0-9a-zA-Z_$]*)/g
 		
